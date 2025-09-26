@@ -40,7 +40,7 @@ Syntax: const [count, setCount] = useState(0);
 
 ===> In React, event handling is done using camelCase syntax and functions, instead of using HTML attributes.
 
-Syntax: <button onClick={handleClick}>Click Me</button>
+<!-- Syntax: <button onClick={handleClick}>Click Me</button> -->
 
 => onClick: React event (camelCase).
 => handleClick: JavaScript function called when the button is clicked.
