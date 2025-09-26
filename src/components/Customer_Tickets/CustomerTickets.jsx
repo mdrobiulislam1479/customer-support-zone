@@ -3,7 +3,7 @@ import TaskStatus from "../Task_Status/TaskStatus";
 import ResolvedTask from "../Resolved_Task/ResolvedTask";
 import Ticket from "../Ticket/Ticket";
 
-const CustomerTickets = () => {
+const CustomerTickets = ({ ticketDatas }) => {
   return (
     <div className="max-w-[1440px] mx-auto mb-20 px-6 grid md:grid-cols-5 xl:grid-cols-8 gap-6">
       <div className="md:col-span-3 xl:col-span-6">
@@ -11,10 +11,7 @@ const CustomerTickets = () => {
           Customer Tickets
         </h1>
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
-          <Ticket></Ticket>
-          <Ticket></Ticket>
-          <Ticket></Ticket>
-          <Ticket></Ticket>
+          <Ticket ticketDatas={ticketDatas}></Ticket>
         </div>
       </div>
       <div className="md:col-span-2">

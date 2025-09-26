@@ -10,7 +10,7 @@ const ResolvedTask = () => {
           Login Issues - Can't Access Account
         </h2>
         <p className="text-[#02A53B] font-semibold">
-          <i class="fa-solid fa-check"></i> Compeleted
+          <i className="fa-solid fa-check"></i> Compeleted
         </p>
       </div>
     </>

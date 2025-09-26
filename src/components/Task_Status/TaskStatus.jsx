@@ -11,7 +11,7 @@ const TaskStatus = () => {
         <h2 className="text-[#001931] text-[18px] font-medium mb-4">
           Login Issues - Can't Access Account
         </h2>
-        <button className="p-3 w-full bg-[#02A53B] font-semibold text-white rounded-md">
+        <button className="p-3 w-full bg-[#02A53B] font-semibold text-white rounded-md cursor-pointer">
           Complete
         </button>
       </div>
