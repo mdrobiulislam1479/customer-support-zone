@@ -23,7 +23,19 @@ const CustomerTickets = ({ ticketDatas, handleProgress, progress }) => {
         </div>
       </div>
       <div className="md:col-span-2">
-        <TaskStatus></TaskStatus>
+        <h1 className="text-[#34485A] text-2xl font-semibold">Task Status</h1>
+        {progress.length === 0 ? (
+          <p className="text-[#627382] mt-4 mb-10">
+            Select a ticket to add to Task Status
+          </p>
+        ) : (
+          progress.map((ticketId, i) => {
+            const ticket = ticketData.find((ticket) => ticket.id === ticketId);
+            return ticket ? (
+              <TaskStatus key={i} data={ticket}></TaskStatus>
+            ) : null;
+          })
+        )}
         <ResolvedTask></ResolvedTask>
       </div>
     </div>
