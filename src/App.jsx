@@ -13,30 +13,34 @@ const ticketDatas = fetchTicket();
 
 const App = () => {
   const [progress, setProgress] = useState([]);
-  const notify = () =>
-    toast(
-      <div className="flex items-center gap-2">
-        <i className="fa-solid fa-circle-check text-green-500"></i>
-        <p>In Progress !</p>
-      </div>
-    );
   const handleProgress = (id) => {
     if (progress.includes(id)) {
+      toast.error("Already In Progress!");
       return;
     }
-    notify();
+    toast.success("In Progress!");
     const newProgress = [...progress, id];
     setProgress(newProgress);
   };
+  const [resolved, setResolved] = useState([]);
+  const handleResolved = (id) => {
+    setProgress(progress.filter((item) => item !== id));
+    toast.success("Resolved!");
+    const newResolved = [...resolved, id];
+    setResolved(newResolved);
+  };
+
   return (
     <>
       <Navbar></Navbar>
-      <Banner progress={progress}></Banner>
+      <Banner progress={progress} resolved={resolved}></Banner>
       <Suspense fallback={<p>Loading...</p>}>
         <CustomerTickets
           ticketDatas={ticketDatas}
           handleProgress={handleProgress}
+          handleResolved={handleResolved}
           progress={progress}
+          resolved={resolved}
         ></CustomerTickets>
       </Suspense>
       <Footer></Footer>

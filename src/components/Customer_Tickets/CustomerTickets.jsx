@@ -3,7 +3,13 @@ import ResolvedTask from "../Resolved_Task/ResolvedTask";
 import Ticket from "../Ticket/Ticket";
 import React, { use } from "react";
 
-const CustomerTickets = ({ ticketDatas, handleProgress, progress }) => {
+const CustomerTickets = ({
+  ticketDatas,
+  handleProgress,
+  progress,
+  handleResolved,
+  resolved,
+}) => {
   const ticketData = use(ticketDatas);
   return (
     <div className="max-w-[1440px] mx-auto mb-20 px-6 grid md:grid-cols-5 xl:grid-cols-8 gap-6">
@@ -32,11 +38,25 @@ const CustomerTickets = ({ ticketDatas, handleProgress, progress }) => {
           progress.map((ticketId, i) => {
             const ticket = ticketData.find((ticket) => ticket.id === ticketId);
             return ticket ? (
-              <TaskStatus key={i} data={ticket}></TaskStatus>
+              <TaskStatus
+                key={i}
+                data={ticket}
+                handleResolved={handleResolved}
+              ></TaskStatus>
             ) : null;
           })
         )}
-        <ResolvedTask></ResolvedTask>
+        <h1 className="text-[#34485A] text-2xl font-semibold">Resolved Task</h1>
+        {resolved.length === 0 ? (
+          <p className="text-[#627382] mt-4 mb-10">No resolved tasks yet.</p>
+        ) : (
+          resolved.map((ticketId, i) => {
+            const ticket = ticketData.find((ticket) => ticket.id === ticketId);
+            return ticket ? (
+              <ResolvedTask key={i} data={ticket}></ResolvedTask>
+            ) : null;
+          })
+        )}
       </div>
     </div>
   );
