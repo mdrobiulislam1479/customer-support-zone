@@ -7,10 +7,10 @@ import twitter from "../../assets/tw.png";
 const Footer = () => {
   return (
     <div className="bg-black ">
-      <div className="max-w-[1440px] mx-auto px-6 2xl:px-0 py-20 text-[#A1A1AA] sm:grid lg:grid-cols-7 gap-14 space-y-6 sm:space-y-0 border-b-[1px] border-[#A1A1AA50]">
-        <div className="space-y-4 col-span-2">
+      <div className="max-w-[1440px] mx-auto px-6 2xl:px-0 py-20 text-[#A1A1AA] lg:flex justify-between flex-wrap space-y-6 lg:space-y-0 border-b-[1px] border-[#A1A1AA50]">
+        <div className="space-y-4">
           <h1 className="text-2xl font-bold text-white">CS — Ticket System</h1>
-          <p>
+          <p className="lg:max-w-[350px]">
             Our customer support ticket system ensures efficient issue tracking,
             faster resolutions, and seamless communication. Easily manage and
             prioritize tickets, improve response times, and enhance customer
@@ -42,7 +42,7 @@ const Footer = () => {
             <a href="">Join Us</a>
           </div>
         </div>
-        <div className="space-y-4 lg:col-span-2">
+        <div className="space-y-4">
           <h2 className=" text-[20px] font-medium text-white">Social Links</h2>
           <div className="flex gap-2">
             <img src={twitter} alt="" />
@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="py-7 text-center">
+      <div className="py-7 text-center text-white">
         <p>© 2025 CS — Ticket System. All rights reserved.</p>
       </div>
     </div>
