@@ -1,4 +1,3 @@
-import React from "react";
 import facebook from "../../assets/fb.png";
 import linkedin from "../../assets/in.png";
 import mail from "../../assets/mail.png";

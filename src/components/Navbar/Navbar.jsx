@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
   return (
     <nav className="bg-white text-black border-b-[1px] border-gray-300">
       <div className="max-w-[1440px] mx-auto px-6">
@@ -31,7 +30,6 @@ const Navbar = () => {
               + New Ticket
             </button>
           </div>
-
           <div className="lg:hidden">
             <button onClick={() => setIsOpen(!isOpen)}>
               <svg
@@ -61,7 +59,6 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-
       {isOpen && (
         <div className="lg:hidden px-6 py-4 space-y-4 flex flex-col text-center border-t-[1px] border-gray-300">
           <a
